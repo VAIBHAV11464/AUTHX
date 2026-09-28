@@ -1,0 +1,33 @@
+caseId,profile,repetition,stage,includedInAcceptance,ok,reason,seconds,transcript,confidence,exactTokenMatch,wordVerified
+static-amber,legacy,1,speak_component,False,True,,1.8175947000017914,,,,
+static-amber,legacy,1,word_component,False,True,,3.263039999998,amber,1.0,True,True
+static-amber,v2,1,speak_component,False,True,,4.886841899999126,amber,1.0,True,True
+static-amber,v2,1,word_component,False,True,,1.5131999000004726,amber,1.0,True,True
+static-bridge,v2,1,speak_component,False,False,wrong_word,5.200199300001259,bridge,1.0,False,False
+static-bridge,v2,1,word_component,False,False,wrong_word,1.7822477000008803,bridge,1.0,False,False
+static-bridge,legacy,1,speak_component,False,True,,1.8047657999995863,,,,
+static-bridge,legacy,1,word_component,False,False,wrong_word,1.6870158999990963,bridge,1.0,False,False
+static-phrase,legacy,1,speak_component,False,True,,1.7976189000000886,,,,
+static-phrase,legacy,1,word_component,False,False,ambiguous_word,1.792697800003225,say amber,,False,False
+static-phrase,v2,1,speak_component,False,False,ambiguous_word,5.151515900000959,say amber,,False,False
+static-phrase,v2,1,word_component,False,False,ambiguous_word,1.7470044000001508,say amber,,False,False
+static-invalid-timing,v2,1,speak_component,False,True,,4.810453100002633,amber,1.0,True,True
+static-invalid-timing,v2,1,word_component,False,True,,1.4771166999998968,amber,1.0,True,True
+static-invalid-timing,legacy,1,speak_component,False,True,,1.793226899997535,,,,
+static-invalid-timing,legacy,1,word_component,False,True,,1.5408203000006324,amber,1.0,True,True
+static-amber,v2,2,speak_component,False,True,,4.902937700000621,amber,1.0,True,True
+static-amber,v2,2,word_component,False,True,,1.4997588000005635,amber,1.0,True,True
+static-amber,legacy,2,speak_component,False,True,,1.8136483000016597,,,,
+static-amber,legacy,2,word_component,False,True,,1.540755200003332,amber,1.0,True,True
+static-bridge,legacy,2,speak_component,False,True,,1.8010724000014307,,,,
+static-bridge,legacy,2,word_component,False,False,wrong_word,1.8002037000005657,bridge,1.0,False,False
+static-bridge,v2,2,speak_component,False,False,wrong_word,5.109218699999474,bridge,1.0,False,False
+static-bridge,v2,2,word_component,False,False,wrong_word,1.6895081000002392,bridge,1.0,False,False
+static-phrase,v2,2,speak_component,False,False,ambiguous_word,5.115451599998778,say amber,,False,False
+static-phrase,v2,2,word_component,False,False,ambiguous_word,1.7250669999993988,say amber,,False,False
+static-phrase,legacy,2,speak_component,False,True,,1.8234555999988515,,,,
+static-phrase,legacy,2,word_component,False,False,ambiguous_word,1.7986301000019012,say amber,,False,False
+static-invalid-timing,legacy,2,speak_component,False,True,,1.905449399997451,,,,
+static-invalid-timing,legacy,2,word_component,False,True,,1.586911800000962,amber,1.0,True,True
+static-invalid-timing,v2,2,speak_component,False,True,,4.9598795999991125,amber,1.0,True,True
+static-invalid-timing,v2,2,word_component,False,True,,1.5771445999998832,amber,1.0,True,True

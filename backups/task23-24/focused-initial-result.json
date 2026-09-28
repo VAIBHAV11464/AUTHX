@@ -1,0 +1,114 @@
+{
+  "stage": "focused-initial",
+  "commands": [
+    {
+      "kind": "study",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/volunteer_study.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 16,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 106.678,
+      "log": "focused-initial/00-study.log"
+    },
+    {
+      "kind": "harness",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/comparison_harness.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 14,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 46.672,
+      "log": "focused-initial/01-harness.log"
+    },
+    {
+      "kind": "smoke",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/smoke_api.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 42,
+      "seconds": 6.673,
+      "log": "focused-initial/02-smoke.log"
+    },
+    {
+      "kind": "profiles",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/verification_profiles.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 10,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 20.33,
+      "log": "focused-initial/03-profiles.log"
+    },
+    {
+      "kind": "word",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/challenge_word.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 16,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 31.189,
+      "log": "focused-initial/04-word.log"
+    },
+    {
+      "kind": "collector_node",
+      "command": [
+        "node",
+        "tests/study_capture.js",
+        "D:\\AI PROJECT\\backups\\task23-24\\focused-initial\\collector-scripts.json"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 0.405,
+      "log": "focused-initial/05-collector_node.log"
+    },
+    {
+      "kind": "compile",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "tools",
+        "tests",
+        "app",
+        "config.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 0.808,
+      "log": "focused-initial/06-compile.log"
+    }
+  ],
+  "passed": true,
+  "pythonTests": 56,
+  "smokeChecks": 42,
+  "skips": 0
+}

@@ -1,0 +1,1789 @@
+{
+  "schemaVersion": "authx-comparison-report-1",
+  "createdAt": "2026-09-28T10:21:32.939649+00:00",
+  "datasetId": "public-sapi-static-smoke",
+  "datasetManifestSha256": "92065eb604a2d99a1ddeff84526d53873272d828dc8c3293e52237b48e4cea18",
+  "repetitions": 2,
+  "uniqueCases": 4,
+  "metadata": {
+    "python": "3.11.15",
+    "defaultProfile": "legacy",
+    "harnessSha256": "aad9246a259d727ef5661eaacd2ab51c844ffd71ce9756d035df652a07964f2c",
+    "dependencies": {
+      "Flask": "3.1.3",
+      "numpy": "2.4.6",
+      "opencv-contrib-python": "5.0.0.93",
+      "mediapipe": "0.10.35",
+      "vosk": "0.3.45"
+    },
+    "gateVersion": "v2-decision-gates-1",
+    "wordVersion": "single-token-confidence-1",
+    "config": {
+      "COSINE_MATCH": 0.363,
+      "FACE_CAP_TRUST": 74,
+      "FACE_SAFE_CAP": 50,
+      "FLASH_ADJUST": {
+        "90": 8,
+        "60": 3,
+        "50": 0,
+        "25": -8
+      },
+      "FLASH_DURATION_MS": 400,
+      "SAFE_MIN": 75,
+      "SUSPICIOUS_MIN": 45,
+      "V2_AUDIO_ENERGY_VAR_FLOOR": 1e-08,
+      "V2_BLINK_MAX_CLOSED_MS": 500,
+      "V2_BLINK_MIN_CLOSED_MS": 40,
+      "V2_CAPTURE_FRAME_MS": 50,
+      "V2_CLIP_MAX_MS": 4000,
+      "V2_CLIP_MAX_PIXELS": 30000000,
+      "V2_CLIP_MIN_MS": 2000,
+      "V2_EAR_CLOSED": 0.17,
+      "V2_EAR_OPEN": 0.21,
+      "V2_ENROLL_CONSISTENCY_COSINE": 0.6,
+      "V2_ENROLL_MIN_USABLE": 3,
+      "V2_ENROLL_SAMPLE_COUNT": 5,
+      "V2_FACE_MAX_BRIGHTNESS": 225,
+      "V2_FACE_MAX_CLIPPED_RATIO": 0.6,
+      "V2_FACE_MIN_AREA_RATIO": 0.02,
+      "V2_FACE_MIN_BRIGHTNESS": 40,
+      "V2_FACE_MIN_CONFIDENCE": 0.6,
+      "V2_FACE_MIN_PX": 80,
+      "V2_FACE_MIN_SHARPNESS": 25,
+      "V2_FACE_MIN_VISIBLE_RATIO": 0.9,
+      "V2_FACE_QUALITY_MIN_RATIO": 0.8,
+      "V2_FIRST_FRAME_MAX_MS": 500,
+      "V2_FLASH_MIN_SAMPLES": 4,
+      "V2_FLASH_MIN_SPAN_MS": 150,
+      "V2_FRAME_MAX_COUNT": 90,
+      "V2_FRAME_MIN_COUNT": 8,
+      "V2_IMAGE_MAX_PIXELS": 921600,
+      "V2_IMAGE_MAX_SIDE": 1280,
+      "V2_IMAGE_MIN_SIDE": 64,
+      "V2_LANDMARK_MAX_GAP_MS": 150,
+      "V2_LANDMARK_MIN_RATIO": 0.8,
+      "V2_LIP_MIN_SAMPLES": 12,
+      "V2_MOUTH_VAR_FLOOR": 0.0001,
+      "V2_WAV_RATES": [
+        8000,
+        16000,
+        22050,
+        32000,
+        44100,
+        48000
+      ],
+      "V2_WORD_MIN_CONFIDENCE": 0.8,
+      "VOICE_ACOUSTIC": 0.75,
+      "VOICE_LIP": 0.25,
+      "WEIGHT_BLINK": 0.3,
+      "WEIGHT_FACE": 0.45,
+      "WEIGHT_VOICE": 0.25
+    },
+    "sourceSha256": "8a600c6d44c6ff4f01e906fb54129a801110e61c4e8972cc34a07eeb030d032f",
+    "timingScope": "Synchronous test-client routes from session start through certificate or failure; excludes dataset IO, common enrollment, live capture/device/browser delays, and diagnostics.",
+    "orderPolicy": "Alternate profile order per case and repetition; shared model caches, no guaranteed cold/warm isolation.",
+    "metricUnit": "case run; repetitions are repeated measurements, not additional independent recordings"
+  },
+  "setupSeconds": 2.602033200000733,
+  "enrollments": {
+    "public-portrait": {
+      "ok": true,
+      "reason": null,
+      "method": "legacy_single_image",
+      "seconds": 0.39695250000295346
+    }
+  },
+  "preservation": {
+    "protectedFiles": 23,
+    "allOriginalFilesUnchanged": true,
+    "allOriginalRowsUnchanged": true,
+    "inventory": {
+      "fileHashes": {
+        "authx.db": "ef2a8941eea53701388d1b593b755a2aee49252cac6d62b89fb0acb1d4dd279b",
+        "requirements.txt": "fa362a0d067f15f7f1b4efacc098fb8dbb2cd33647fe5d6f2998556f9350a662",
+        "requirements.lock": "5d16563b1e59101da9281acfbd6f13de7fe285fec847cf73dbb50a4f366e05fc",
+        "models/face_detection_yunet_2023mar.onnx": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+        "models/face_landmarker.json": "6f7eda30b222824eb03ea308dda0dd171dcbb17afdfa24bff26b3a3bad3599a8",
+        "models/face_landmarker.task": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+        "models/face_recognition_sface_2021dec.onnx": "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79",
+        "models/vosk-model-small-en-us-0.15/am/final.mdl": "75370a0137f9daf8f469dedd7daa4513ae7a621f03240c6e512e2b50b656a7b6",
+        "models/vosk-model-small-en-us-0.15/conf/mfcc.conf": "1e2228006d01d805ad1c267fee9f79709ca87ac51bd82b0e3f5c69ba543f0fc4",
+        "models/vosk-model-small-en-us-0.15/conf/model.conf": "8f14cb1eeb07c762c371db648c6be688d347236155ca0f64fb13b6567a8ce81f",
+        "models/vosk-model-small-en-us-0.15/graph/disambig_tid.int": "9ad87cc166d0998f08f758f47a6223a120dfffcbee805c4849c3aa5e6bb3c0fc",
+        "models/vosk-model-small-en-us-0.15/graph/Gr.fst": "023c8b7e30704a9e37765c635c252e608a02f361235bf94abdcf2a5225d85b20",
+        "models/vosk-model-small-en-us-0.15/graph/HCLr.fst": "5caafba3081e1646545ac6bff0dd7a318e53dcbdc86f237909ce1d2ac1293d34",
+        "models/vosk-model-small-en-us-0.15/graph/phones/word_boundary.int": "da199d9c991e0e84681ddbb34627b915b26302d50a8fdaa23c51e2bc3a50b5c3",
+        "models/vosk-model-small-en-us-0.15/ivector/final.dubm": "8c5d7dd69d2122313baaf19f61f35dd3fa18b70c62ac0687e311e1c46e6daca7",
+        "models/vosk-model-small-en-us-0.15/ivector/final.ie": "3f37faf90c375b9e4740b569398b5829ed9cc07d19be6d441f72c3b71d7efcc6",
+        "models/vosk-model-small-en-us-0.15/ivector/final.mat": "ddd83586dc5f928cda8738b922c85ffe38fc789cb5f9151a712ca12f37265382",
+        "models/vosk-model-small-en-us-0.15/ivector/global_cmvn.stats": "33be09afcc80059847a275c3d043b51f1ab954c7c2438ddbbf4745e8ba144ff9",
+        "models/vosk-model-small-en-us-0.15/ivector/online_cmvn.conf": "a2f3571754b64297cb7efb2e7ca3df61995c5a45fcbb97188f90613552bb2dfe",
+        "models/vosk-model-small-en-us-0.15/ivector/splice.conf": "9f0c5f7c82d18eaf25d8bce470efa9f7741f88411fe428774bc0a9bb69a24756",
+        "models/vosk-model-small-en-us-0.15/README": "c0cf286e4f7783306c5f6469b37db69228fb16803b03cae661edb2d7bba64ebb",
+        "models/vosk-model-small-en-us-0.15.json": "54e9e66b9592bbf3489d59a8b2d3460327671d25ee5f263f1e3280e1ea9cad29",
+        "models/vosk-model-small-en-us-0.15.zip": "30f26242c4eb449f948e42cb302dd7a686cb29a3423a8367f99ff41780942498"
+      },
+      "allOriginalRowsSha256": "4d6d02beb2bfa655859c92482300ae3b715f3622d47ad270af03400110470e76"
+    }
+  },
+  "results": [
+    {
+      "caseId": "static-amber",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": true
+      },
+      "profile": "legacy",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 1,
+      "orderInRun": 1,
+      "inputSha256": "6cf167ec562d81862765972bbbc6ba7969fc7a37ebe236b5e09e5a5caf4a04ad",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_required",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": null,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.0193994000001112
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.579828500001895
+        }
+      ],
+      "processingSeconds": 2.603482200000144,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.8175947000017914,
+          "speech": null
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 3.263039999998,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-amber",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": true
+      },
+      "profile": "v2",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 1,
+      "orderInRun": 2,
+      "inputSha256": "6cf167ec562d81862765972bbbc6ba7969fc7a37ebe236b5e09e5a5caf4a04ad",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_recorded",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": 0,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.02318300000115414
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 5.940003200001229
+        }
+      ],
+      "processingSeconds": 5.967232999999396,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 4.886841899999126,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.5131999000004726,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-bridge",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": false
+      },
+      "profile": "v2",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 1,
+      "orderInRun": 3,
+      "inputSha256": "51e371d66763ea57ab01b762ae0312515ba8a4175a61ecd78a8142a39d8717ae",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_recorded",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": 0,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.02396950000184006
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.911000399999466
+        }
+      ],
+      "processingSeconds": 2.9393989000018337,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "wrong_word",
+          "seconds": 5.200199300001259,
+          "speech": {
+            "transcript": "bridge",
+            "confidence": 1.0,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "wrong_word",
+          "seconds": 1.7822477000008803,
+          "speech": {
+            "transcript": "bridge",
+            "confidence": 1.0,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-bridge",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": false
+      },
+      "profile": "legacy",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 1,
+      "orderInRun": 4,
+      "inputSha256": "51e371d66763ea57ab01b762ae0312515ba8a4175a61ecd78a8142a39d8717ae",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_required",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": null,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.02216200000111712
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.6781451999995625
+        }
+      ],
+      "processingSeconds": 2.7042602000001352,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.8047657999995863,
+          "speech": null
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "wrong_word",
+          "seconds": 1.6870158999990963,
+          "speech": {
+            "transcript": "bridge",
+            "confidence": 1.0,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-phrase",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": false
+      },
+      "profile": "legacy",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 1,
+      "orderInRun": 5,
+      "inputSha256": "3608926ec2ae869c0a2b1b51fb3ec2d3b3d41c3000d8175d87fc011a0bc6458d",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_required",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": null,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.023647199999686563
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.5609175999998115
+        }
+      ],
+      "processingSeconds": 2.5884786999995413,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.7976189000000886,
+          "speech": null
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "ambiguous_word",
+          "seconds": 1.792697800003225,
+          "speech": {
+            "transcript": "say amber",
+            "confidence": null,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-phrase",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": false
+      },
+      "profile": "v2",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 1,
+      "orderInRun": 6,
+      "inputSha256": "3608926ec2ae869c0a2b1b51fb3ec2d3b3d41c3000d8175d87fc011a0bc6458d",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_recorded",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": 0,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.022681999998894753
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.845462500001304
+        }
+      ],
+      "processingSeconds": 2.8720252999992226,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "ambiguous_word",
+          "seconds": 5.151515900000959,
+          "speech": {
+            "transcript": "say amber",
+            "confidence": null,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "ambiguous_word",
+          "seconds": 1.7470044000001508,
+          "speech": {
+            "transcript": "say amber",
+            "confidence": null,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-invalid-timing",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": true
+      },
+      "profile": "v2",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 1,
+      "orderInRun": 7,
+      "inputSha256": "d45b52302b2d7262f17e9e3cd3ee5f20b09952b5eb57ed03cdae2318dadf3d12",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_recorded",
+      "failureStage": "look",
+      "failureReason": "bad_timestamps",
+      "retryRequested": true,
+      "speakSubmissionsSpent": 0,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.020946500000718515
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 400,
+          "ok": false,
+          "reason": "bad_timestamps",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.055061200000636745
+        }
+      ],
+      "processingSeconds": 0.07998879999649944,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 4.810453100002633,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.4771166999998968,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-invalid-timing",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": true
+      },
+      "profile": "legacy",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 1,
+      "orderInRun": 8,
+      "inputSha256": "d45b52302b2d7262f17e9e3cd3ee5f20b09952b5eb57ed03cdae2318dadf3d12",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_required",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": null,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.021819599998707417
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.5071224000021175
+        }
+      ],
+      "processingSeconds": 2.5328773000001092,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.793226899997535,
+          "speech": null
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.5408203000006324,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-amber",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": true
+      },
+      "profile": "v2",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 2,
+      "orderInRun": 9,
+      "inputSha256": "6cf167ec562d81862765972bbbc6ba7969fc7a37ebe236b5e09e5a5caf4a04ad",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_recorded",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": 0,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.02249129999836441
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.8553375999981654
+        }
+      ],
+      "processingSeconds": 2.8814974000015354,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 4.902937700000621,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.4997588000005635,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-amber",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": true
+      },
+      "profile": "legacy",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 2,
+      "orderInRun": 10,
+      "inputSha256": "6cf167ec562d81862765972bbbc6ba7969fc7a37ebe236b5e09e5a5caf4a04ad",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_required",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": null,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.02255390000209445
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.51637959999789
+        }
+      ],
+      "processingSeconds": 2.542794999997568,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.8136483000016597,
+          "speech": null
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.540755200003332,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-bridge",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": false
+      },
+      "profile": "legacy",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 2,
+      "orderInRun": 11,
+      "inputSha256": "51e371d66763ea57ab01b762ae0312515ba8a4175a61ecd78a8142a39d8717ae",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_required",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": null,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.022672499999316642
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.522748599996703
+        }
+      ],
+      "processingSeconds": 2.549595700002101,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.8010724000014307,
+          "speech": null
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "wrong_word",
+          "seconds": 1.8002037000005657,
+          "speech": {
+            "transcript": "bridge",
+            "confidence": 1.0,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-bridge",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": false
+      },
+      "profile": "v2",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 2,
+      "orderInRun": 12,
+      "inputSha256": "51e371d66763ea57ab01b762ae0312515ba8a4175a61ecd78a8142a39d8717ae",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_recorded",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": 0,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.022526200002175756
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.8475215999969805
+        }
+      ],
+      "processingSeconds": 2.8740932999971847,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "wrong_word",
+          "seconds": 5.109218699999474,
+          "speech": {
+            "transcript": "bridge",
+            "confidence": 1.0,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "wrong_word",
+          "seconds": 1.6895081000002392,
+          "speech": {
+            "transcript": "bridge",
+            "confidence": 1.0,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-phrase",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": false
+      },
+      "profile": "v2",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 2,
+      "orderInRun": 13,
+      "inputSha256": "3608926ec2ae869c0a2b1b51fb3ec2d3b3d41c3000d8175d87fc011a0bc6458d",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_recorded",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": 0,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.02280149999933201
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.8994634999980917
+        }
+      ],
+      "processingSeconds": 2.9267265999988012,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "ambiguous_word",
+          "seconds": 5.115451599998778,
+          "speech": {
+            "transcript": "say amber",
+            "confidence": null,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "ambiguous_word",
+          "seconds": 1.7250669999993988,
+          "speech": {
+            "transcript": "say amber",
+            "confidence": null,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-phrase",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": false
+      },
+      "profile": "legacy",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 2,
+      "orderInRun": 14,
+      "inputSha256": "3608926ec2ae869c0a2b1b51fb3ec2d3b3d41c3000d8175d87fc011a0bc6458d",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_required",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": null,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.023872100002336083
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.497628600001917
+        }
+      ],
+      "processingSeconds": 2.5253068000019994,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.8234555999988515,
+          "speech": null
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": false,
+          "reason": "ambiguous_word",
+          "seconds": 1.7986301000019012,
+          "speech": {
+            "transcript": "say amber",
+            "confidence": null,
+            "exactTokenMatch": false,
+            "wordVerified": false,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-invalid-timing",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": true
+      },
+      "profile": "legacy",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 2,
+      "orderInRun": 15,
+      "inputSha256": "d45b52302b2d7262f17e9e3cd3ee5f20b09952b5eb57ed03cdae2318dadf3d12",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_required",
+      "failureStage": "look",
+      "failureReason": "no_blink",
+      "retryRequested": true,
+      "speakSubmissionsSpent": null,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.02315660000022035
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 422,
+          "ok": false,
+          "reason": "no_blink",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 2.646375500000431
+        }
+      ],
+      "processingSeconds": 2.673390300002211,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.905449399997451,
+          "speech": null
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.586911800000962,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "static-invalid-timing",
+      "fixtureCategory": "synthetic",
+      "split": "demo",
+      "timingProvenance": "synthetic_schedule",
+      "groundTruth": {
+        "category": "unknown",
+        "safeExpected": null,
+        "wordMatch": true
+      },
+      "profile": "v2",
+      "expectedWord": "amber",
+      "flashStartMs": 2000,
+      "repetition": 2,
+      "orderInRun": 16,
+      "inputSha256": "d45b52302b2d7262f17e9e3cd3ee5f20b09952b5eb57ed03cdae2318dadf3d12",
+      "completed": false,
+      "acceptedSafe": false,
+      "machineRiskLabel": null,
+      "machineTrustScore": null,
+      "safeEligible": null,
+      "safeEligibilityStatus": "not_recorded",
+      "failureStage": "look",
+      "failureReason": "bad_timestamps",
+      "retryRequested": true,
+      "speakSubmissionsSpent": 0,
+      "wordAttempts": [],
+      "stages": [
+        {
+          "stage": "start",
+          "attempt": null,
+          "httpStatus": 200,
+          "ok": true,
+          "reason": null,
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.024744700000155717
+        },
+        {
+          "stage": "look",
+          "attempt": 1,
+          "httpStatus": 400,
+          "ok": false,
+          "reason": "bad_timestamps",
+          "retryable": true,
+          "setupFailure": false,
+          "attemptsUsed": null,
+          "seconds": 0.056667900000320515
+        }
+      ],
+      "processingSeconds": 0.08586079999804497,
+      "diagnostics": [
+        {
+          "stage": "speak_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 4.9598795999991125,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        },
+        {
+          "stage": "word_component",
+          "includedInAcceptance": false,
+          "ok": true,
+          "reason": null,
+          "seconds": 1.5771445999998832,
+          "speech": {
+            "transcript": "amber",
+            "confidence": 1.0,
+            "exactTokenMatch": true,
+            "wordVerified": true,
+            "grammarRestricted": false,
+            "speechVersion": "vosk-unrestricted-1",
+            "wordConfigVersion": "single-token-confidence-1"
+          }
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "legacy": {
+      "caseRuns": 8,
+      "uniqueCases": 4,
+      "completion": {
+        "numerator": 0,
+        "denominator": 8,
+        "rate": 0.0,
+        "unavailableReason": null
+      },
+      "safeAcceptance": {
+        "numerator": 0,
+        "denominator": 8,
+        "rate": 0.0,
+        "unavailableReason": null
+      },
+      "machineSafeOutcomes": 0,
+      "genuineCompletion": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No known genuine cases"
+      },
+      "genuineSafeAcceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No known genuine cases"
+      },
+      "genuineSafeWithinTwoCaptures": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No known genuine cases"
+      },
+      "incorrectSafe": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No cases with known negative SAFE ground truth"
+      },
+      "knownNegativeCompleted": 0,
+      "unknownSafeGroundTruth": 8,
+      "retryCaseRate": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0,
+        "unavailableReason": null
+      },
+      "retrySubmissionRate": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0,
+        "unavailableReason": null
+      },
+      "wordExactMatch": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No word recognition measured in the full flow"
+      },
+      "wordVerified": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No word verification measured in the full flow"
+      },
+      "wordAgreementAccuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No full-flow measured words with known word-agreement truth"
+      },
+      "diagnosticWordVerified": {
+        "numerator": 4,
+        "denominator": 8,
+        "rate": 0.5,
+        "unavailableReason": null
+      },
+      "diagnosticWordAgreementAccuracy": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0,
+        "unavailableReason": null
+      },
+      "fullFlowTiming": {
+        "n": 8,
+        "meanSeconds": 2.590023275000476,
+        "medianSeconds": 2.569037200000821,
+        "p95Seconds": 2.7042602000001352,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": null
+      },
+      "completedFlowTiming": {
+        "n": 0,
+        "meanSeconds": null,
+        "medianSeconds": null,
+        "p95Seconds": null,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": "No measured processing times"
+      },
+      "stageTiming": {
+        "start": {
+          "n": 8,
+          "meanSeconds": 0.02241041250044873,
+          "medianSeconds": 0.022613200000705547,
+          "p95Seconds": 0.023872100002336083,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": null
+        },
+        "look": {
+          "n": 8,
+          "meanSeconds": 2.563643250000041,
+          "medianSeconds": 2.5418330999982572,
+          "p95Seconds": 2.6781451999995625,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": null
+        },
+        "speak": {
+          "n": 0,
+          "meanSeconds": null,
+          "medianSeconds": null,
+          "p95Seconds": null,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": "No measured processing times"
+        },
+        "trust": {
+          "n": 0,
+          "meanSeconds": null,
+          "medianSeconds": null,
+          "p95Seconds": null,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": "No measured processing times"
+        },
+        "certificate": {
+          "n": 0,
+          "meanSeconds": null,
+          "medianSeconds": null,
+          "p95Seconds": null,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": "No measured processing times"
+        }
+      },
+      "diagnosticTiming": {
+        "speak_component": {
+          "n": 8,
+          "meanSeconds": 1.8196039999997993,
+          "medianSeconds": 1.809207050000623,
+          "p95Seconds": 1.905449399997451,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": null
+        },
+        "word_component": {
+          "n": 8,
+          "meanSeconds": 1.8762593500009643,
+          "medianSeconds": 1.7398568500011606,
+          "p95Seconds": 3.263039999998,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": null
+        }
+      }
+    },
+    "v2": {
+      "caseRuns": 8,
+      "uniqueCases": 4,
+      "completion": {
+        "numerator": 0,
+        "denominator": 8,
+        "rate": 0.0,
+        "unavailableReason": null
+      },
+      "safeAcceptance": {
+        "numerator": 0,
+        "denominator": 8,
+        "rate": 0.0,
+        "unavailableReason": null
+      },
+      "machineSafeOutcomes": 0,
+      "genuineCompletion": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No known genuine cases"
+      },
+      "genuineSafeAcceptance": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No known genuine cases"
+      },
+      "genuineSafeWithinTwoCaptures": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No known genuine cases"
+      },
+      "incorrectSafe": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No cases with known negative SAFE ground truth"
+      },
+      "knownNegativeCompleted": 0,
+      "unknownSafeGroundTruth": 8,
+      "retryCaseRate": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0,
+        "unavailableReason": null
+      },
+      "retrySubmissionRate": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0,
+        "unavailableReason": null
+      },
+      "wordExactMatch": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No word recognition measured in the full flow"
+      },
+      "wordVerified": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No word verification measured in the full flow"
+      },
+      "wordAgreementAccuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No full-flow measured words with known word-agreement truth"
+      },
+      "diagnosticWordVerified": {
+        "numerator": 4,
+        "denominator": 8,
+        "rate": 0.5,
+        "unavailableReason": null
+      },
+      "diagnosticWordAgreementAccuracy": {
+        "numerator": 8,
+        "denominator": 8,
+        "rate": 1.0,
+        "unavailableReason": null
+      },
+      "fullFlowTiming": {
+        "n": 8,
+        "meanSeconds": 2.578353012499065,
+        "medianSeconds": 2.87779534999936,
+        "p95Seconds": 5.967232999999396,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": null
+      },
+      "completedFlowTiming": {
+        "n": 0,
+        "meanSeconds": null,
+        "medianSeconds": null,
+        "p95Seconds": null,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": "No measured processing times"
+      },
+      "stageTiming": {
+        "start": {
+          "n": 8,
+          "meanSeconds": 0.02291808750032942,
+          "medianSeconds": 0.02274174999911338,
+          "p95Seconds": 0.024744700000155717,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": null
+        },
+        "look": {
+          "n": 8,
+          "meanSeconds": 2.551314737499524,
+          "medianSeconds": 2.851429599997573,
+          "p95Seconds": 5.940003200001229,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": null
+        },
+        "speak": {
+          "n": 0,
+          "meanSeconds": null,
+          "medianSeconds": null,
+          "p95Seconds": null,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": "No measured processing times"
+        },
+        "trust": {
+          "n": 0,
+          "meanSeconds": null,
+          "medianSeconds": null,
+          "p95Seconds": null,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": "No measured processing times"
+        },
+        "certificate": {
+          "n": 0,
+          "meanSeconds": null,
+          "medianSeconds": null,
+          "p95Seconds": null,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": "No measured processing times"
+        }
+      },
+      "diagnosticTiming": {
+        "speak_component": {
+          "n": 8,
+          "meanSeconds": 5.017062225000245,
+          "medianSeconds": 5.034549149999293,
+          "p95Seconds": 5.200199300001259,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": null
+        },
+        "word_component": {
+          "n": 8,
+          "meanSeconds": 1.6263809000001856,
+          "medianSeconds": 1.6333263500000612,
+          "p95Seconds": 1.7822477000008803,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": null
+        }
+      }
+    }
+  },
+  "reportFormatting": {
+    "measuredResultsSha256": "57f3f24cc560c74765f117962f3e5a872b13390d413bac2f1eab193ecaeb6869",
+    "measuredSourceArchive": "task22-native-source.zip",
+    "formatterSha256": "2ae0cd0bab98fa4ab8405ec5c2ec22889ccf6126329eed328806286336c6851e",
+    "measurementValuesChanged": false
+  }
+}

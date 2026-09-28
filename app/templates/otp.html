@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}AuthX code{% endblock %}
+{% block body_class %}auth-body{% endblock %}
+{% block content %}
+  <main class="card">
+    <h1>AuthX</h1>
+    <p class="muted">Enter the 6-digit code. If email is not set, it is printed in the server console.</p>
+    <form id="otp-form">
+      <label>Username <input name="username" required></label>
+      <label>Code <input name="otp" inputmode="numeric" maxlength="6" required></label>
+      <button type="submit">Verify</button>
+    </form>
+    <p id="status" class="status" hidden></p>
+    <p><a href="/login">Back to login</a></p>
+    <p class="creators">{{ creators|join(', ') }}</p>
+  </main>
+  <script>
+    const HOMES = { student: '/student', faculty: '/faculty', admin: '/admin' };
+    const form = document.getElementById('otp-form');
+    const status = document.getElementById('status');
+    const pending = localStorage.getItem('authx_pending_user');
+    if (pending) form.username.value = pending;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      status.hidden = true;
+      let res;
+      let data;
+      try {
+        res = await fetch('/api/auth/otp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: form.username.value.trim(),
+            otp: form.otp.value.trim(),
+          }),
+        });
+        data = await res.json();
+      } catch (err) {
+        status.textContent = 'Could not reach AuthX.';
+        status.hidden = false;
+        return;
+      }
+      if (!res.ok) {
+        status.textContent = data.error === 'otp_expired' ? 'That code has expired.' : 'That code is not valid.';
+        status.hidden = false;
+        return;
+      }
+      localStorage.setItem('authx_token', data.token);
+      localStorage.setItem('authx_role', data.role);
+      localStorage.removeItem('authx_pending_user');
+      window.location.href = HOMES[data.role] || '/login';
+    });
+  </script>
+{% endblock %}

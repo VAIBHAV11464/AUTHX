@@ -1,0 +1,9 @@
+flask>=3.0
+PyJWT>=2.8
+bcrypt>=4.1
+opencv-contrib-python==5.0.0.93
+numpy>=1.26
+Pillow>=10.0
+python-dotenv>=1.0
+mediapipe==0.10.35
+vosk==0.3.45

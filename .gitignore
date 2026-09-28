@@ -1,0 +1,13 @@
+.venv/
+.runtime/
+venv/
+__pycache__/
+*.py[cod]
+.env
+authx.db
+backups/
+docs/AUTHX_HANDOFF*
+models/*.onnx
+models/*.task
+models/vosk-model-small-en-us-0.15/
+models/*.zip

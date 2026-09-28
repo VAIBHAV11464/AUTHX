@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "authx-v2-readiness-1",
+  "studyId": "authx-volunteers",
+  "createdAt": "2026-09-28T15:03:06.263074+00:00",
+  "decision": "retain_legacy",
+  "defaultProfile": "legacy",
+  "defaultChanged": false,
+  "task23HumanEvaluationComplete": false,
+  "evidenceStatus": "pending_actual_consented_recordings",
+  "reasons": [
+    "Fewer than ten consenting unique volunteers",
+    "Exactly two distinct declared cameras are required by this study protocol",
+    "Protocol, attempt unit and latency boundary have not been declared before collection",
+    "No held-out evaluation volunteers",
+    "Held-out subject/camera/lighting/attack matrix is incomplete",
+    "Predeclared evaluation trials have missing recordings or outcomes",
+    "Reference laptop has not been identified and confirmed on this runtime",
+    "genuineCompletionWithinTwo: unavailable",
+    "zeroHeldOutWrongPersonWrongWordSafe: unavailable",
+    "referenceLaptop95PercentWithinEightSeconds: unavailable",
+    "No held-out genuine outcomes",
+    "No held-out wrong_person outcomes",
+    "No held-out wrong_word outcomes",
+    "No held-out photo outcomes",
+    "No held-out screen_replay outcomes",
+    "No verified pre-run source/config/ground-truth/split freeze"
+  ],
+  "samples": {
+    "readyForValidation": false,
+    "reasons": [
+      "Fewer than ten consenting unique volunteers",
+      "Exactly two distinct declared cameras are required by this study protocol",
+      "Protocol, attempt unit and latency boundary have not been declared before collection",
+      "No held-out evaluation volunteers",
+      "Held-out subject/camera/lighting/attack matrix is incomplete",
+      "Predeclared evaluation trials have missing recordings or outcomes",
+      "Reference laptop has not been identified and confirmed on this runtime"
+    ],
+    "consentingUniqueVolunteers": 0,
+    "tuningVolunteers": 0,
+    "evaluationVolunteers": 0,
+    "distinctCameras": 0,
+    "plannedEvaluationTrials": 0,
+    "missingEvaluationTrials": 0,
+    "registeredSessionAttempts": 0,
+    "uniqueRecordings": 0,
+    "referenceLaptopConfirmed": false
+  },
+  "criteria": {
+    "genuineCompletionWithinTwo": {
+      "status": "unavailable",
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null,
+      "unavailableReason": "No held-out genuine trials"
+    },
+    "zeroHeldOutWrongPersonWrongWordSafe": {
+      "status": "unavailable",
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null,
+      "unavailableReason": "No held-out wrong-person/wrong-word trials"
+    },
+    "referenceLaptop95PercentWithinEightSeconds": {
+      "status": "unavailable",
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null,
+      "unavailableReason": "Incomplete scoring scope or unconfirmed reference laptop",
+      "completeTiming": {
+        "n": 0,
+        "meanSeconds": null,
+        "medianSeconds": null,
+        "p95Seconds": null,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": "No measured processing times"
+      },
+      "partialFailureSamples": 0,
+      "scope": "sum_look_speak_trust_certificate_route_seconds_per_fresh_session",
+      "population": "all_predeclared_genuine_evaluation_session_attempts",
+      "distinctSessionAttempts": 0,
+      "allCategorySessionAttempts": 0
+    }
+  },
+  "heldOutProfiles": {
+    "legacy": {
+      "trials": 0,
+      "genuineCompletionWithinTwo": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No held-out genuine trials"
+      },
+      "genuineSafeCompletionWithinTwo": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No held-out genuine trials"
+      },
+      "incorrectMachineSafe": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No held-out wrong-person/wrong-word trials"
+      },
+      "allCategoryMachineSafe": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No observed trials"
+      },
+      "allCategoryCertificateCompletion": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No observed trials"
+      },
+      "allCategorySafeCompletion": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No observed trials"
+      },
+      "retryTrials": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No observed trials"
+      },
+      "wordAgreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No measured full-flow word agreement"
+      },
+      "wordVerified": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No full-flow word verification"
+      },
+      "terminalProcessingTiming": {
+        "n": 0,
+        "meanSeconds": null,
+        "medianSeconds": null,
+        "p95Seconds": null,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": "No measured processing times"
+      }
+    },
+    "v2": {
+      "trials": 0,
+      "genuineCompletionWithinTwo": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No held-out genuine trials"
+      },
+      "genuineSafeCompletionWithinTwo": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No held-out genuine trials"
+      },
+      "incorrectMachineSafe": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No held-out wrong-person/wrong-word trials"
+      },
+      "allCategoryMachineSafe": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No observed trials"
+      },
+      "allCategoryCertificateCompletion": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No observed trials"
+      },
+      "allCategorySafeCompletion": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No observed trials"
+      },
+      "retryTrials": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No observed trials"
+      },
+      "wordAgreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No measured full-flow word agreement"
+      },
+      "wordVerified": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No full-flow word verification"
+      },
+      "terminalProcessingTiming": {
+        "n": 0,
+        "meanSeconds": null,
+        "medianSeconds": null,
+        "p95Seconds": null,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": "No measured processing times"
+      }
+    }
+  },
+  "latency": {
+    "legacy": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null,
+      "unavailableReason": "Incomplete scoring scope or unconfirmed reference laptop",
+      "completeTiming": {
+        "n": 0,
+        "meanSeconds": null,
+        "medianSeconds": null,
+        "p95Seconds": null,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": "No measured processing times"
+      },
+      "partialFailureSamples": 0,
+      "scope": "sum_look_speak_trust_certificate_route_seconds_per_fresh_session",
+      "population": "all_predeclared_genuine_evaluation_session_attempts",
+      "distinctSessionAttempts": 0,
+      "allCategorySessionAttempts": 0
+    },
+    "v2": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null,
+      "unavailableReason": "Incomplete scoring scope or unconfirmed reference laptop",
+      "completeTiming": {
+        "n": 0,
+        "meanSeconds": null,
+        "medianSeconds": null,
+        "p95Seconds": null,
+        "percentileMethod": "nearest-rank",
+        "unavailableReason": "No measured processing times"
+      },
+      "partialFailureSamples": 0,
+      "scope": "sum_look_speak_trust_certificate_route_seconds_per_fresh_session",
+      "population": "all_predeclared_genuine_evaluation_session_attempts",
+      "distinctSessionAttempts": 0,
+      "allCategorySessionAttempts": 0
+    }
+  },
+  "groups": {
+    "legacy": {
+      "subjectId": {},
+      "cameraId": {},
+      "lighting": {},
+      "category": {},
+      "matrix": []
+    },
+    "v2": {
+      "subjectId": {},
+      "cameraId": {},
+      "lighting": {},
+      "category": {},
+      "matrix": []
+    }
+  },
+  "anonymousOutcomes": [],
+  "freezeSha256": null,
+  "collectedSamplesBySplit": {},
+  "actualEnrollmentCollection": [],
+  "pairedEnrollmentLimitation": "The paired harness holds one common enrollment vector fixed. It does not compare legacy single-image against v2 five-image enrollment; original v2 enrollment collection is reported separately.",
+  "consentMeaning": "Operator declaration and reviewed private document; software does not obtain consent.",
+  "latencyMeaning": "Predeclared full-scoring benchmark uses every genuine held-out session attempt, including failures as unavailable samples. Partial and attack rejection times are separate diagnostics; neither can prove the complete eight-second scoring target.",
+  "splitCounts": {},
+  "repeatedMeasurementsIncluded": false,
+  "externalOutreach": false
+}

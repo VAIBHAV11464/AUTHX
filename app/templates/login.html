@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}AuthX login{% endblock %}
+{% block body_class %}auth-body{% endblock %}
+{% block content %}
+  <main class="card">
+    <h1>AuthX</h1>
+    <p class="muted">Sign in</p>
+    <form id="login-form">
+      <label>Username <input name="username" autocomplete="username" required></label>
+      <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+      <button type="submit">Continue</button>
+    </form>
+    <p id="status" class="status" hidden></p>
+    <p class="creators">{{ creators|join(', ') }}</p>
+  </main>
+  <script>
+    const HOMES = { student: '/student', faculty: '/faculty', admin: '/admin' };
+    const form = document.getElementById('login-form');
+    const status = document.getElementById('status');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      status.hidden = true;
+      let res;
+      let data;
+      try {
+        res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: form.username.value.trim(),
+            password: form.password.value,
+          }),
+        });
+        data = await res.json();
+      } catch (err) {
+        status.textContent = 'Could not reach AuthX.';
+        status.hidden = false;
+        return;
+      }
+      if (!res.ok) {
+        status.textContent = 'Wrong username or password.';
+        status.hidden = false;
+        return;
+      }
+      if (data.otp_required) {
+        localStorage.setItem('authx_pending_user', data.username);
+        window.location.href = '/otp';
+        return;
+      }
+      localStorage.setItem('authx_token', data.token);
+      localStorage.setItem('authx_role', data.role);
+      window.location.href = HOMES[data.role] || '/login';
+    });
+  </script>
+{% endblock %}

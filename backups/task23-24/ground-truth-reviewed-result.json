@@ -1,0 +1,72 @@
+{
+  "stage": "ground-truth-reviewed",
+  "commands": [
+    {
+      "kind": "study",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/volunteer_study.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 21,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 140.567,
+      "log": "ground-truth-reviewed/00-study.log"
+    },
+    {
+      "kind": "harness",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/comparison_harness.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 14,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 46.842,
+      "log": "ground-truth-reviewed/01-harness.log"
+    },
+    {
+      "kind": "collector_node",
+      "command": [
+        "node",
+        "tests/study_capture.js",
+        "D:\\AI PROJECT\\backups\\task23-24\\ground-truth-reviewed\\collector-scripts.json"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 0.218,
+      "log": "ground-truth-reviewed/02-collector_node.log"
+    },
+    {
+      "kind": "compile",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "tools",
+        "tests",
+        "app",
+        "config.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 1.144,
+      "log": "ground-truth-reviewed/03-compile.log"
+    }
+  ],
+  "passed": true,
+  "pythonTests": 35,
+  "smokeChecks": 0,
+  "skips": 0
+}

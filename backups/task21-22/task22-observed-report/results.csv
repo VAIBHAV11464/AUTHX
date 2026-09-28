@@ -1,0 +1,17 @@
+caseId,profile,repetition,fixtureCategory,split,expectedWord,flashStartMs,completed,acceptedSafe,machineRiskLabel,machineTrustScore,safeEligible,failureStage,failureReason,retryRequested,speakSubmissionsSpent,processingSeconds,transcript,confidence,wordVerified,inputSha256
+static-amber,legacy,1,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,,2.603482200000144,,,,6cf167ec562d81862765972bbbc6ba7969fc7a37ebe236b5e09e5a5caf4a04ad
+static-amber,v2,1,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,0,5.967232999999396,,,,6cf167ec562d81862765972bbbc6ba7969fc7a37ebe236b5e09e5a5caf4a04ad
+static-bridge,v2,1,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,0,2.9393989000018337,,,,51e371d66763ea57ab01b762ae0312515ba8a4175a61ecd78a8142a39d8717ae
+static-bridge,legacy,1,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,,2.7042602000001352,,,,51e371d66763ea57ab01b762ae0312515ba8a4175a61ecd78a8142a39d8717ae
+static-phrase,legacy,1,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,,2.5884786999995413,,,,3608926ec2ae869c0a2b1b51fb3ec2d3b3d41c3000d8175d87fc011a0bc6458d
+static-phrase,v2,1,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,0,2.8720252999992226,,,,3608926ec2ae869c0a2b1b51fb3ec2d3b3d41c3000d8175d87fc011a0bc6458d
+static-invalid-timing,v2,1,synthetic,demo,amber,2000,False,False,,,,look,bad_timestamps,True,0,0.07998879999649944,,,,d45b52302b2d7262f17e9e3cd3ee5f20b09952b5eb57ed03cdae2318dadf3d12
+static-invalid-timing,legacy,1,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,,2.5328773000001092,,,,d45b52302b2d7262f17e9e3cd3ee5f20b09952b5eb57ed03cdae2318dadf3d12
+static-amber,v2,2,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,0,2.8814974000015354,,,,6cf167ec562d81862765972bbbc6ba7969fc7a37ebe236b5e09e5a5caf4a04ad
+static-amber,legacy,2,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,,2.542794999997568,,,,6cf167ec562d81862765972bbbc6ba7969fc7a37ebe236b5e09e5a5caf4a04ad
+static-bridge,legacy,2,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,,2.549595700002101,,,,51e371d66763ea57ab01b762ae0312515ba8a4175a61ecd78a8142a39d8717ae
+static-bridge,v2,2,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,0,2.8740932999971847,,,,51e371d66763ea57ab01b762ae0312515ba8a4175a61ecd78a8142a39d8717ae
+static-phrase,v2,2,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,0,2.9267265999988012,,,,3608926ec2ae869c0a2b1b51fb3ec2d3b3d41c3000d8175d87fc011a0bc6458d
+static-phrase,legacy,2,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,,2.5253068000019994,,,,3608926ec2ae869c0a2b1b51fb3ec2d3b3d41c3000d8175d87fc011a0bc6458d
+static-invalid-timing,legacy,2,synthetic,demo,amber,2000,False,False,,,,look,no_blink,True,,2.673390300002211,,,,d45b52302b2d7262f17e9e3cd3ee5f20b09952b5eb57ed03cdae2318dadf3d12
+static-invalid-timing,v2,2,synthetic,demo,amber,2000,False,False,,,,look,bad_timestamps,True,0,0.08586079999804497,,,,d45b52302b2d7262f17e9e3cd3ee5f20b09952b5eb57ed03cdae2318dadf3d12

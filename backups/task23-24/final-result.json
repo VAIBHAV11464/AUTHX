@@ -1,0 +1,138 @@
+{
+  "authorizedTasks": [
+    23,
+    24
+  ],
+  "previouslyCompletedTasks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "task23": {
+    "preparationComplete": true,
+    "humanEvaluationComplete": false,
+    "status": "pending_actual_consented_recordings",
+    "consentingVolunteers": 0,
+    "actualHumanRecordings": 0,
+    "missingInputs": [
+      "actual consented recordings/volunteer availability",
+      "two physical camera identities",
+      "reference laptop specification and latency boundary/population confirmation"
+    ],
+    "protocol": "docs/VOLUNTEER_STUDY_PROTOCOL.md",
+    "report": "docs/TASK23_VOLUNTEER_EVALUATION.md"
+  },
+  "task24": {
+    "readinessDecisionImplemented": true,
+    "decision": "retain_legacy",
+    "validationCriteriaSatisfied": false,
+    "defaultChanged": false,
+    "criteria": {
+      "genuineCompletionWithinTwo": {
+        "status": "unavailable",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No held-out genuine trials"
+      },
+      "zeroHeldOutWrongPersonWrongWordSafe": {
+        "status": "unavailable",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "No held-out wrong-person/wrong-word trials"
+      },
+      "referenceLaptop95PercentWithinEightSeconds": {
+        "status": "unavailable",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "unavailableReason": "Incomplete scoring scope or unconfirmed reference laptop",
+        "completeTiming": {
+          "n": 0,
+          "meanSeconds": null,
+          "medianSeconds": null,
+          "p95Seconds": null,
+          "percentileMethod": "nearest-rank",
+          "unavailableReason": "No measured processing times"
+        },
+        "partialFailureSamples": 0,
+        "scope": "sum_look_speak_trust_certificate_route_seconds_per_fresh_session",
+        "population": "all_predeclared_genuine_evaluation_session_attempts",
+        "distinctSessionAttempts": 0,
+        "allCategorySessionAttempts": 0
+      }
+    },
+    "report": "docs/TASK24_V2_READINESS.md",
+    "observedDecision": "pending-reviewed/readiness.json"
+  },
+  "defaultProfile": "legacy",
+  "committed": false,
+  "pushed": false,
+  "deployed": false,
+  "externalOutreach": false,
+  "checks": {
+    "passed": true,
+    "distinctPythonCasesThisBatch": 61,
+    "smokeChecks": 42,
+    "skips": 0,
+    "collectorNodeSimulationPassed": true,
+    "compiled": true,
+    "initialFocused": "focused-initial-result.json",
+    "finalFocused": "ground-truth-reviewed-result.json",
+    "newStudyCases": 21,
+    "evidenceMeaning": "Controlled rule/API/device simulations; not human performance or hardware timing.",
+    "earlierFocused": "reviewed-result.json"
+  },
+  "preservation": {
+    "beforeSourceFiles": 113,
+    "afterSourceFiles": 121,
+    "protectedFiles": 23,
+    "protectedHashesMatch": true,
+    "databaseSha256": "ef2a8941eea53701388d1b593b755a2aee49252cac6d62b89fb0acb1d4dd279b",
+    "allOriginalRowsIdentical": true,
+    "issuedScoreJsonBytesIdentical": true,
+    "allApplicationSourceBytesUnchanged": true,
+    "unchangedAlgorithms": [
+      "app/services/risk_engine.py:fuse",
+      "app/services/verification_profiles.py:_legacy_look",
+      "app/services/verification_profiles.py:_legacy_speak",
+      "app/services/certificate.py:block_hash"
+    ],
+    "referencesVerifiedBeforeEdits": 29,
+    "sourceReview": "final-source-review.diff",
+    "finalManifest": "after-reviewed-manifest.json"
+  },
+  "artifacts": {
+    "pendingDecisionSha256": "0336a68743d41903136385f75bd9b08e84e2f4ad6a5ff6078e28dbb8b528415f",
+    "sourceArchiveSha256": "86fd36579468047fdcaca28a76441209a0f8b59dc3b31e6d7b02a712a8c602c2",
+    "datasetInventory": "dataset-inventory.json",
+    "sourceArchive": "after-reviewed-source.zip",
+    "previousReviewedResult": "result.json"
+  },
+  "finalReview": {
+    "photoReplayWordTruthIndependent": true,
+    "unknownWordTruthExcludedFromAgreement": true,
+    "measuredWordVerificationReportedEvenWithUnknownTruth": true,
+    "humanSamplesStillZero": true
+  }
+}

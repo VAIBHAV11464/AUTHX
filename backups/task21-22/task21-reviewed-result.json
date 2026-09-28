@@ -1,0 +1,385 @@
+{
+  "stage": "task21-reviewed",
+  "commands": [
+    {
+      "kind": "smoke",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/smoke_api.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\00-smoke_api.log",
+      "seconds": 6.536,
+      "executed": 42,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/verification_profiles.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\01-verification_profiles.log",
+      "seconds": 20.44,
+      "executed": 10,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/uploads_quality.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\02-uploads_quality.log",
+      "seconds": 33.967,
+      "executed": 17,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/enrollment_matching.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\03-enrollment_matching.log",
+      "seconds": 33.256,
+      "executed": 17,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/speak_identity.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\04-speak_identity.log",
+      "seconds": 25.854,
+      "executed": 12,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/landmark_runtime.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\05-landmark_runtime.log",
+      "seconds": 6.237,
+      "executed": 6,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/capture_timing.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\06-capture_timing.log",
+      "seconds": 9.753,
+      "executed": 4,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/landmark_evidence.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\07-landmark_evidence.log",
+      "seconds": 38.808,
+      "executed": 19,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/offline_speech.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\08-offline_speech.log",
+      "seconds": 11.457,
+      "executed": 5,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/challenge_word.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\09-challenge_word.log",
+      "seconds": 35.667,
+      "executed": 16,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/decision_gates.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\10-decision_gates.log",
+      "seconds": 22.811,
+      "executed": 12,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/evidence_summaries.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\11-evidence_summaries.log",
+      "seconds": 19.671,
+      "executed": 9,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/session_lifecycle.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\12-session_lifecycle.log",
+      "seconds": 35.161,
+      "executed": 17,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/certificate_atomic.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\13-certificate_atomic.log",
+      "seconds": 30.328,
+      "executed": 14,
+      "skips": 0
+    },
+    {
+      "kind": "unittest",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/regression_failures.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\14-regression_failures.log",
+      "seconds": 30.1,
+      "executed": 14,
+      "skips": 0
+    },
+    {
+      "kind": "node_simulation",
+      "command": [
+        "node",
+        "tests/wizard_enrollment.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\15-wizard_enrollment.log",
+      "seconds": 0.166,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "node_simulation",
+      "command": [
+        "node",
+        "tests/capture_timing.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\16-capture_timing.log",
+      "seconds": 0.171,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "node_simulation",
+      "command": [
+        "node",
+        "tests/wizard_speech.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\17-wizard_speech.log",
+      "seconds": 0.165,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "node_simulation",
+      "command": [
+        "node",
+        "tests/evidence_summaries.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\18-evidence_summaries.log",
+      "seconds": 0.173,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "node_simulation",
+      "command": [
+        "node",
+        "tests/session_lifecycle.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\19-session_lifecycle.log",
+      "seconds": 0.184,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "compile",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "app",
+        "tests",
+        "tools",
+        "config.py"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\20-config.log",
+      "seconds": 0.436,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "js_syntax",
+      "command": [
+        "node",
+        "--check",
+        "app\\static\\js\\admin.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\21-admin.log",
+      "seconds": 0.174,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "js_syntax",
+      "command": [
+        "node",
+        "--check",
+        "app\\static\\js\\audio-capture.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\22-audio-capture.log",
+      "seconds": 0.162,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "js_syntax",
+      "command": [
+        "node",
+        "--check",
+        "app\\static\\js\\capture.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\23-capture.log",
+      "seconds": 0.158,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "js_syntax",
+      "command": [
+        "node",
+        "--check",
+        "app\\static\\js\\evidence.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\24-evidence.log",
+      "seconds": 0.158,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "js_syntax",
+      "command": [
+        "node",
+        "--check",
+        "app\\static\\js\\faculty.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\25-faculty.log",
+      "seconds": 0.153,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "js_syntax",
+      "command": [
+        "node",
+        "--check",
+        "app\\static\\js\\shell.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\26-shell.log",
+      "seconds": 0.156,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "js_syntax",
+      "command": [
+        "node",
+        "--check",
+        "app\\static\\js\\wallpaper.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\27-wallpaper.log",
+      "seconds": 0.163,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "js_syntax",
+      "command": [
+        "node",
+        "--check",
+        "app\\static\\js\\wizard.js"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\28-wizard.log",
+      "seconds": 0.158,
+      "executed": null,
+      "skips": 0
+    },
+    {
+      "kind": "dependencies",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exitCode": 0,
+      "log": "task21-reviewed\\29-check.log",
+      "seconds": 2.649,
+      "executed": null,
+      "skips": 0
+    }
+  ],
+  "pythonTests": 172,
+  "smokeChecks": 42,
+  "skips": 0,
+  "passed": true
+}

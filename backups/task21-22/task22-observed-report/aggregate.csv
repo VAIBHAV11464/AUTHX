@@ -1,0 +1,45 @@
+profile,metric,numerator,denominator,rate,unavailableReason,n,meanSeconds,medianSeconds,p95Seconds
+legacy,completion,0,8,0.0,,,,,
+legacy,safeAcceptance,0,8,0.0,,,,,
+legacy,genuineCompletion,0,0,,No known genuine cases,,,,
+legacy,genuineSafeAcceptance,0,0,,No known genuine cases,,,,
+legacy,genuineSafeWithinTwoCaptures,0,0,,No known genuine cases,,,,
+legacy,incorrectSafe,0,0,,No cases with known negative SAFE ground truth,,,,
+legacy,retryCaseRate,8,8,1.0,,,,,
+legacy,retrySubmissionRate,8,8,1.0,,,,,
+legacy,wordExactMatch,0,0,,No word recognition measured in the full flow,,,,
+legacy,wordVerified,0,0,,No word verification measured in the full flow,,,,
+legacy,wordAgreementAccuracy,0,0,,No full-flow measured words with known word-agreement truth,,,,
+legacy,diagnosticWordVerified,4,8,0.5,,,,,
+legacy,diagnosticWordAgreementAccuracy,8,8,1.0,,,,,
+legacy,fullFlowTiming,,,,,8,2.590023275000476,2.569037200000821,2.7042602000001352
+legacy,completedFlowTiming,,,,No measured processing times,0,,,
+legacy,stageTiming/start,,,,,8,0.02241041250044873,0.022613200000705547,0.023872100002336083
+legacy,stageTiming/look,,,,,8,2.563643250000041,2.5418330999982572,2.6781451999995625
+legacy,stageTiming/speak,,,,No measured processing times,0,,,
+legacy,stageTiming/trust,,,,No measured processing times,0,,,
+legacy,stageTiming/certificate,,,,No measured processing times,0,,,
+legacy,diagnosticTiming/speak_component,,,,,8,1.8196039999997993,1.809207050000623,1.905449399997451
+legacy,diagnosticTiming/word_component,,,,,8,1.8762593500009643,1.7398568500011606,3.263039999998
+v2,completion,0,8,0.0,,,,,
+v2,safeAcceptance,0,8,0.0,,,,,
+v2,genuineCompletion,0,0,,No known genuine cases,,,,
+v2,genuineSafeAcceptance,0,0,,No known genuine cases,,,,
+v2,genuineSafeWithinTwoCaptures,0,0,,No known genuine cases,,,,
+v2,incorrectSafe,0,0,,No cases with known negative SAFE ground truth,,,,
+v2,retryCaseRate,8,8,1.0,,,,,
+v2,retrySubmissionRate,8,8,1.0,,,,,
+v2,wordExactMatch,0,0,,No word recognition measured in the full flow,,,,
+v2,wordVerified,0,0,,No word verification measured in the full flow,,,,
+v2,wordAgreementAccuracy,0,0,,No full-flow measured words with known word-agreement truth,,,,
+v2,diagnosticWordVerified,4,8,0.5,,,,,
+v2,diagnosticWordAgreementAccuracy,8,8,1.0,,,,,
+v2,fullFlowTiming,,,,,8,2.578353012499065,2.87779534999936,5.967232999999396
+v2,completedFlowTiming,,,,No measured processing times,0,,,
+v2,stageTiming/start,,,,,8,0.02291808750032942,0.02274174999911338,0.024744700000155717
+v2,stageTiming/look,,,,,8,2.551314737499524,2.851429599997573,5.940003200001229
+v2,stageTiming/speak,,,,No measured processing times,0,,,
+v2,stageTiming/trust,,,,No measured processing times,0,,,
+v2,stageTiming/certificate,,,,No measured processing times,0,,,
+v2,diagnosticTiming/speak_component,,,,,8,5.017062225000245,5.034549149999293,5.200199300001259
+v2,diagnosticTiming/word_component,,,,,8,1.6263809000001856,1.6333263500000612,1.7822477000008803

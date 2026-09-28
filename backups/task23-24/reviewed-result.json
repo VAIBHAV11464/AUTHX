@@ -1,0 +1,72 @@
+{
+  "stage": "reviewed",
+  "commands": [
+    {
+      "kind": "study",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/volunteer_study.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 19,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 134.137,
+      "log": "reviewed/00-study.log"
+    },
+    {
+      "kind": "harness",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/comparison_harness.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 14,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 46.47,
+      "log": "reviewed/01-harness.log"
+    },
+    {
+      "kind": "collector_node",
+      "command": [
+        "node",
+        "tests/study_capture.js",
+        "D:\\AI PROJECT\\backups\\task23-24\\reviewed\\collector-scripts.json"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 0.191,
+      "log": "reviewed/02-collector_node.log"
+    },
+    {
+      "kind": "compile",
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "tools",
+        "tests",
+        "app",
+        "config.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 0.395,
+      "log": "reviewed/03-compile.log"
+    }
+  ],
+  "passed": true,
+  "pythonTests": 33,
+  "smokeChecks": 0,
+  "skips": 0
+}

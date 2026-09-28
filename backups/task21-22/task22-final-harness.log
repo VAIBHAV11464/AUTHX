@@ -1,0 +1,21 @@
+test_actual_body_limit_rejection_is_paired_and_not_repaired (__main__.HarnessTests.test_actual_body_limit_rejection_is_paired_and_not_repaired) ... ok
+test_actual_timers_stage_scope_and_percentile_method (__main__.HarnessTests.test_actual_timers_stage_scope_and_percentile_method) ... ok
+test_bad_timestamps_are_rejected_by_route_without_harness_repair (__main__.HarnessTests.test_bad_timestamps_are_rejected_by_route_without_harness_repair) ... ok
+test_global_changes_after_start_cannot_change_pinned_word_or_profile (__main__.HarnessTests.test_global_changes_after_start_cannot_change_pinned_word_or_profile) ... ok
+AuthX look no_blink dip=None blinks=None
+AuthX look no_blink dip=None blinks=None
+test_incomplete_flow_cannot_be_completed_by_component_diagnostics (__main__.HarnessTests.test_incomplete_flow_cannot_be_completed_by_component_diagnostics) ... ok
+test_invalid_common_enrollment_has_no_invented_processing_time_or_result (__main__.HarnessTests.test_invalid_common_enrollment_has_no_invented_processing_time_or_result) ... ok
+test_missing_assets_versions_duplicate_ids_and_unrecorded_consent_fail_clearly (__main__.HarnessTests.test_missing_assets_versions_duplicate_ids_and_unrecorded_consent_fail_clearly) ... ok
+test_output_allowlist_no_recordings_embeddings_credentials_or_dataset_paths (__main__.HarnessTests.test_output_allowlist_no_recordings_embeddings_credentials_or_dataset_paths) ... ok
+test_repeated_runs_preserve_policy_outcomes_original_db_and_config (__main__.HarnessTests.test_repeated_runs_preserve_policy_outcomes_original_db_and_config) ... ok
+test_retry_submission_counts_four_budget_and_saved_look_reuse (__main__.HarnessTests.test_retry_submission_counts_four_budget_and_saved_look_reuse) ... ok
+test_same_original_media_enrollment_word_flash_and_pinned_profiles (__main__.HarnessTests.test_same_original_media_enrollment_word_flash_and_pinned_profiles) ... ok
+test_unexpected_route_error_has_no_secret_message_and_is_not_a_capture_retry (__main__.HarnessTests.test_unexpected_route_error_has_no_secret_message_and_is_not_a_capture_retry) ... ok
+test_unknown_zero_denominators_and_known_negative_safe_are_distinct (__main__.HarnessTests.test_unknown_zero_denominators_and_known_negative_safe_are_distinct) ... ok
+test_upload_importer_preserves_original_bytes_timestamps_and_audio_offset (__main__.HarnessTests.test_upload_importer_preserves_original_bytes_timestamps_and_audio_offset) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 42.851s
+
+OK

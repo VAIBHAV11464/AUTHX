@@ -1,0 +1,105 @@
+{
+  "commands": [
+    {
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/smoke_api.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 42,
+      "seconds": 6.492583299997932,
+      "log": "task22-reviewed\\00-smoke_api.log"
+    },
+    {
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/verification_profiles.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 10,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 19.826535899999726,
+      "log": "task22-reviewed\\01-verification_profiles.log"
+    },
+    {
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/challenge_word.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 16,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 33.91236360000039,
+      "log": "task22-reviewed\\02-challenge_word.log"
+    },
+    {
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/certificate_atomic.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 14,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 29.175766599997587,
+      "log": "task22-reviewed\\03-certificate_atomic.log"
+    },
+    {
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/regression_failures.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 14,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 29.482559799998853,
+      "log": "task22-reviewed\\04-regression_failures.log"
+    },
+    {
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "tests/comparison_harness.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 14,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 40.4730567000006,
+      "log": "task22-reviewed\\05-comparison_harness.log"
+    },
+    {
+      "command": [
+        "D:\\AI PROJECT\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "app",
+        "tools",
+        "tests",
+        "config.py"
+      ],
+      "exitCode": 0,
+      "completed": true,
+      "unittestCases": 0,
+      "skips": 0,
+      "smokeChecks": 0,
+      "seconds": 0.43745440000202507,
+      "log": "task22-reviewed\\06-config.log"
+    }
+  ],
+  "passed": true,
+  "pythonTests": 68,
+  "smokeChecks": 42,
+  "skips": 0
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "Existing local dataset directories identified by handoff; root runtime directory inventory checked. No media copied or app initialized.",
+  "knownDatasets": [
+    {
+      "directory": ".runtime/fixtures",
+      "fileCount": 5,
+      "bytes": 624043,
+      "datasetId": null,
+      "caseCount": 0,
+      "fixtureCategories": {},
+      "declaredSplits": {},
+      "manifestSha256": null,
+      "humanValidationEligible": false
+    },
+    {
+      "directory": ".runtime/comparison-fixtures",
+      "fileCount": 5,
+      "bytes": 1032766,
+      "datasetId": "public-sapi-static-smoke",
+      "caseCount": 4,
+      "fixtureCategories": {
+        "synthetic": 4
+      },
+      "declaredSplits": {
+        "demo": 4
+      },
+      "manifestSha256": "d9fd41e488afa8195929d30a5cd52b34f7ba123df03550c820c9fe30bfa3c223",
+      "humanValidationEligible": false
+    },
+    {
+      "directory": ".runtime/comparison-fixtures-jpeg",
+      "fileCount": 5,
+      "bytes": 489347,
+      "datasetId": "public-sapi-static-smoke",
+      "caseCount": 4,
+      "fixtureCategories": {
+        "synthetic": 4
+      },
+      "declaredSplits": {
+        "demo": 4
+      },
+      "manifestSha256": "92065eb604a2d99a1ddeff84526d53873272d828dc8c3293e52237b48e4cea18",
+      "humanValidationEligible": false
+    }
+  ],
+  "actualConsentedDatasetProvided": false,
+  "consentingVolunteersObserved": 0,
+  "actualRecordingsObserved": 0,
+  "actualReferenceLaptopConfirmed": false,
+  "actualCameraIdentifiersProvided": false,
+  "privateEmptyRegistry": ".runtime/volunteer-study-task23-24/study.json",
+  "missingDataQuestionPending": true,
+  "note": "Task23 policy tests create temporary controlled synthetic data with fake test consent documents; these are not volunteer evidence and are cleaned up."
+}

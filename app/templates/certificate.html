@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}AuthX certificate{% endblock %}
+{% block body_class %}shell-body{% endblock %}
+{% block content %}
+  <div class="shell">
+    <header class="top">
+      <div>
+        <strong>AuthX</strong>
+        <span class="muted">Certificate</span>
+      </div>
+    </header>
+    <main class="panel">
+      {% if missing %}
+        <h1>Certificate not found</h1>
+      {% else %}
+        <h1>{{ cert.cert_id }}</h1>
+        <p class="muted">{% if cert.revoked %}Revoked{% else %}{{ record.riskLabel }}{% endif %}</p>
+        <div id="certificate-evidence" class="muted">
+          {% for line in evidence_lines %}<p>{{ line }}</p>{% endfor %}
+        </div>
+        <div class="metrics">
+          <article class="tile tile-hero label-{{ (record.riskLabel or '')|lower }}">
+            <span class="tile-label">Trust</span>
+            <strong>{{ record.trustScore }} {{ record.riskLabel }}</strong>
+          </article>
+          <article class="tile tile-hero chain-{{ chain }}">
+            <span class="tile-label">Chain</span>
+            <strong>{{ chain }}</strong>
+          </article>
+          <article class="tile"><span class="tile-label">Word</span><strong>{{ record.word }}</strong></article>
+          <article class="tile"><span class="tile-label">Flash time</span><strong>{{ record.flashStartMs }} ms</strong></article>
+          <article class="tile"><span class="tile-label">Face score</span><strong>{{ record.faceScore }}</strong></article>
+          <article class="tile"><span class="tile-label">Cosine</span><strong>{{ record.cosine }}</strong></article>
+          <article class="tile"><span class="tile-label">Blink count</span><strong>{{ record.blinkCount }}</strong></article>
+          <article class="tile"><span class="tile-label">Lip correlation</span><strong>{{ record.lipR }}</strong></article>
+          <article class="tile"><span class="tile-label">RMS</span><strong>{{ record.rms }}</strong></article>
+          <article class="tile"><span class="tile-label">Speech ratio</span><strong>{{ record.speechRatio }}</strong></article>
+          <article class="tile"><span class="tile-label">MFCC variation</span><strong>{{ record.mfccVariation }}</strong></article>
+          <article class="tile"><span class="tile-label">Acoustic</span><strong>{{ record.acousticScore }}</strong></article>
+          <article class="tile"><span class="tile-label">Lip score</span><strong>{{ record.lipScore }}</strong></article>
+          <article class="tile"><span class="tile-label">Combined voice</span><strong>{{ record.voiceScore }}</strong></article>
+          <article class="tile tile-chip">
+            <span class="tile-label">Previous hash</span>
+            <strong class="hash">{{ cert.prev_hash }}</strong>
+          </article>
+        </div>
+      {% endif %}
+    </main>
+    <footer class="creators">{{ creators|join(', ') }}</footer>
+  </div>
+{% endblock %}

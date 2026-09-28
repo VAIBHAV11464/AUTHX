@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}AuthX {{ role|title }}{% endblock %}
+{% block body_class %}shell-body{% endblock %}
+{% block content %}
+  <div class="shell">
+    <header class="top">
+      <div>
+        <strong>AuthX</strong>
+        <span class="muted">{{ role|title }}</span>
+      </div>
+      <button type="button" id="sign-out" class="linkish">Sign out</button>
+    </header>
+    <main class="panel">
+      <h1>{{ heading }}</h1>
+      <p class="muted" id="who">Checking sign-in…</p>
+      {% if role == 'student' %}
+      <section id="wizard" class="wizard-controls">
+        <label>Camera
+          <select id="camera" disabled>
+            <option value="">Allow the camera to see devices</option>
+          </select>
+        </label>
+        <div class="preview" id="preview">
+          <video id="live" autoplay playsinline muted></video>
+        </div>
+        <p id="prompt" class="prompt">Allow the camera, then enroll your face.</p>
+        <div class="wizard-actions">
+          <button type="button" id="allow">Allow camera</button>
+          <button type="button" id="enroll" hidden>Enroll face</button>
+          <button type="button" id="enroll-again" hidden>Enroll again</button>
+          <button type="button" id="look" hidden>Start look</button>
+          <button type="button" id="speak" hidden>Start speak</button>
+        </div>
+        <p id="word-line" class="prompt" hidden></p>
+        <p id="wizard-status" class="status" hidden></p>
+        <p id="verification-evidence" class="muted" hidden aria-live="polite"></p>
+        <div id="look-metrics" class="metrics" hidden>
+          <article class="tile"><span class="tile-label">Face score</span><strong id="m-face"></strong></article>
+          <article class="tile"><span class="tile-label">Cosine</span><strong id="m-cosine"></strong></article>
+          <article class="tile"><span class="tile-label">Blink count</span><strong id="m-blink"></strong></article>
+          <article class="tile"><span class="tile-label">Dip percent</span><strong id="m-dip"></strong></article>
+          <article class="tile"><span class="tile-label">Reflection delta</span><strong id="m-delta"></strong></article>
+          <article class="tile"><span class="tile-label">Reflection correlation</span><strong id="m-r"></strong></article>
+        </div>
+        <div id="speak-metrics" class="metrics" hidden>
+          <article id="trust-block" class="tile tile-hero">
+            <span class="tile-label">Trust</span>
+            <strong id="m-trust"></strong>
+          </article>
+          <article class="tile"><span class="tile-label">RMS</span><strong id="m-rms"></strong></article>
+          <article class="tile"><span class="tile-label">MFCC variation</span><strong id="m-mfcc"></strong></article>
+          <article class="tile"><span class="tile-label">Acoustic score</span><strong id="m-acoustic"></strong></article>
+          <article class="tile"><span class="tile-label">Lip correlation</span><strong id="m-lip"></strong></article>
+          <article class="tile"><span class="tile-label">Combined voice</span><strong id="m-voice"></strong></article>
+          <article class="tile"><span class="tile-label">Base</span><strong id="m-base"></strong></article>
+          <article class="tile"><span class="tile-label">Flash adjustment</span><strong id="m-adjust"></strong></article>
+          <article class="tile tile-chip">
+            <span class="tile-label">Certificate</span>
+            <a id="m-cert" href=""></a>
+          </article>
+        </div>
+      </section>
+      {% elif role == 'faculty' %}
+      <section id="faculty-home">
+        <h2>Sessions</h2>
+        <ul id="session-list" class="session-list"></ul>
+        <p id="faculty-status" class="muted">Loading sessions…</p>
+      </section>
+      {% elif role == 'admin' %}
+      <section id="admin-home">
+        <h2>Labels</h2>
+        <div class="metrics count-row">
+          <article class="tile tile-hero label-safe">
+            <span class="tile-label">SAFE</span>
+            <strong id="count-safe">…</strong>
+          </article>
+          <article class="tile tile-hero label-suspicious">
+            <span class="tile-label">SUSPICIOUS</span>
+            <strong id="count-suspicious">…</strong>
+          </article>
+          <article class="tile tile-hero label-deepfake">
+            <span class="tile-label">DEEPFAKE</span>
+            <strong id="count-deepfake">…</strong>
+          </article>
+        </div>
+        <h2>Certificates</h2>
+        <ul id="cert-list" class="session-list"></ul>
+        <p id="admin-status" class="muted">Loading certificates…</p>
+      </section>
+      {% endif %}
+    </main>
+    <footer class="creators">{{ creators|join(', ') }}</footer>
+  </div>
+  <script src="{{ url_for('static', filename='js/shell.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/evidence.js') }}"></script>
+  {% if role == 'student' %}
+  <script src="{{ url_for('static', filename='js/capture.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/wizard.js') }}"></script>
+  <script>
+    AuthXShell.requireRole('student').then((me) => {
+      if (me && me.role === 'student') {
+        AuthXWizard.start(me, {
+          longSide: {{ frame_long_side }},
+          jpegQuality: {{ jpeg_quality }},
+          flashMs: {{ flash_ms }},
+          sampleRate: {{ sample_rate }},
+          enrollmentSamples: {{ enrollment_samples }},
+        });
+      }
+    });
+  </script>
+  {% elif role == 'faculty' %}
+  <script src="{{ url_for('static', filename='js/faculty.js') }}"></script>
+  <script>
+    AuthXShell.requireRole('faculty').then((me) => {
+      if (me && me.role === 'faculty') AuthXFaculty.loadList();
+    });
+  </script>
+  {% elif role == 'admin' %}
+  <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+  <script>
+    AuthXShell.requireRole('admin').then((me) => {
+      if (me && me.role === 'admin') AuthXAdmin.load();
+    });
+  </script>
+  {% endif %}
+{% endblock %}
