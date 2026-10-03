@@ -25,11 +25,14 @@ from app.services.certificate import issue_certificate, chain_status
 
 
 class FailureTests(unittest.TestCase):
-    setUp = summaries.SummaryTests.setUp
     start = summaries.SummaryTests.start
     saved = summaries.SummaryTests.saved
     auth = summaries.SummaryTests.auth
     post = summaries.SummaryTests.post
+
+    def setUp(self):
+        summaries.SummaryTests.setUp(self)
+        self.app.config['REQUIRE_OTP'] = True
 
     def sql(self, statement, params=()):
         with contextlib.closing(models.connect()) as conn:
@@ -43,6 +46,26 @@ class FailureTests(unittest.TestCase):
         models.create_otp(user['id'], bcrypt.hashpw(code.encode(), bcrypt.gensalt(rounds=4)).decode(),
                           expires or (datetime.now(timezone.utc) + timedelta(minutes=2)).isoformat())
         return {'username': username, 'otp': code}
+
+    def test_demo_password_logs_in_all_roles_directly_without_otp(self):
+        self.app.config['REQUIRE_OTP'] = False
+        with patch.object(auth, 'deliver_otp', side_effect=AssertionError('OTP must not be sent')):
+            for username, role in (('avinash', 'student'), ('sriram', 'faculty'), ('vaibhav', 'admin')):
+                with self.subTest(username=username):
+                    response = self.client.post('/api/auth/login', json={'username': username, 'password': 'pass'})
+                    self.assertEqual(response.status_code, 200)
+                    payload = response.get_json()
+                    self.assertEqual(payload['role'], role)
+                    self.assertTrue(payload['token'])
+                    self.assertNotIn('otp_required', payload)
+                    who = self.client.get('/api/auth/me', headers={'Authorization': 'Bearer ' + payload['token']})
+                    self.assertEqual(who.status_code, 200)
+                    self.assertEqual(who.get_json()['username'], username)
+                    self.assertEqual(self.client.post('/api/auth/login', json={
+                        'username': username, 'password': 'wrong-password'}).status_code, 401)
+        self.assertEqual(self.client.get('/otp').status_code, 302)
+        self.assertEqual(self.client.post('/api/auth/otp', json={'username': 'sriram', 'otp': '246810'}).status_code, 404)
+        self.assertEqual(self.sql('SELECT COUNT(*) AS n FROM otps')[0]['n'], 0)
 
     def test_completed_faculty_admin_password_otp_roles_and_replay(self):
         password = 'local-test-only'

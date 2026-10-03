@@ -105,6 +105,7 @@ def _scores(app):
 
 
 def _http(app):
+    app.config["REQUIRE_OTP"] = False
     _set_password(app)
     client = app.test_client()
     health = client.get("/api/health")
@@ -119,10 +120,9 @@ def _http(app):
     faculty_block = client.get("/api/faculty/sessions", headers=_auth(token))
     _check(faculty_block.status_code == 403, "student token rejected on a faculty route")
 
-    hidden = io.StringIO()
-    with contextlib.redirect_stdout(hidden):
-        otp = client.post("/api/auth/login", json={"username": "sriram", "password": _PASSWORD})
-    _check(otp.status_code == 200 and otp.get_json().get("otp_required") is True, "faculty login waits for OTP")
+    faculty = client.post("/api/auth/login", json={"username": "sriram", "password": _PASSWORD})
+    _check(faculty.status_code == 200 and faculty.get_json().get("token")
+           and faculty.get_json().get("otp_required") is not True, "faculty password login is direct")
 
     started = client.post("/api/session/start", headers=_auth(token))
     _check(started.status_code == 422 and started.get_json()["reason"] == "not_enrolled", "start without a face")

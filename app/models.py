@@ -148,7 +148,7 @@ def _seed_users(conn):
     now = _utc_now()
     created = []
     for username, role in SEED_USERS:
-        password = secrets.token_urlsafe(8)
+        password = "pass"
         password_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
         conn.execute(
             """

@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 
 import bcrypt
 import jwt
-from flask import Blueprint, current_app, g, jsonify, render_template, request
+from flask import Blueprint, current_app, g, jsonify, redirect, render_template, request
 
 from app.auth.decorators import role_required, token_required
 from app.models import (
@@ -68,6 +68,8 @@ def login_page():
 
 @bp.get("/otp")
 def otp_page():
+    if not current_app.config["REQUIRE_OTP"]:
+        return redirect("/login")
     return render_template("otp.html", creators=current_app.config["CREATORS"])
 
 
@@ -86,7 +88,7 @@ def login():
         return jsonify(ok=False, error="invalid_credentials"), 401
     if not _credentials_match(password, user["password_hash"]):
         return jsonify(ok=False, error="invalid_credentials"), 401
-    if user["role"] == "student":
+    if user["role"] == "student" or not current_app.config["REQUIRE_OTP"]:
         return jsonify(_token_payload(user, _issue_token(user)))
     code = f"{secrets.randbelow(1000000):06d}"
     expires = (_utc_now() + timedelta(minutes=current_app.config["OTP_MINUTES"])).replace(
@@ -106,6 +108,8 @@ def login():
 
 @bp.post("/api/auth/otp")
 def verify_otp():
+    if not current_app.config["REQUIRE_OTP"]:
+        return jsonify(ok=False, error="otp_disabled"), 404
     data = request.get_json(silent=True) or {}
     if not isinstance(data, dict):
         return jsonify(ok=False, error="invalid_otp"), 401

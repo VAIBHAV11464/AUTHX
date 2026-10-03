@@ -12,6 +12,7 @@ class Config:
     JWT_SECRET = os.getenv("JWT_SECRET", "dev-jwt-change-me-use-32-bytes-min")
     JWT_HOURS = 8
     OTP_MINUTES = 10
+    REQUIRE_OTP = os.getenv("AUTHX_REQUIRE_OTP", "false").strip().lower() in {"1", "true", "yes"}
 
     SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
     SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))

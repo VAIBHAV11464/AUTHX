@@ -15,6 +15,8 @@ Set-Location 'D:\AI PROJECT'
 
 Open <http://127.0.0.1:5000/login>. Stop the server with Ctrl+C.
 
+For the local demo, sign in directly with password `pass`: `avinash` is a student, `sriram` is faculty, and `vaibhav` is admin. Newly created databases seed these same credentials. This intentionally weak shared password is only for the loopback demo; change it before exposing AuthX to other users. Faculty/admin OTP can be restored by setting `AUTHX_REQUIRE_OTP=true`.
+
 Activation is optional: the command above explicitly selects the correct Python and avoids PowerShell activation-policy problems. Do not use the global `python` command to start this project; it may select MSYS2 Python instead.
 
 In another PowerShell window, a running server can be checked with:
@@ -218,7 +220,7 @@ Exit 2 means evidence/readiness is unavailable. Real collection requires reviewe
 - `requirements.lock` pins the resolved application dependencies with SHA-256 distribution hashes for the Python 3.11 environment.
 - `.runtime/` holds the local interpreter, package cache, and preserved previous environment; it is ignored by Git.
 - Existing YuNet/SFace ONNX files, the Face Landmarker task model, and the local Vosk English model reside in `models/`.
-- The app reads optional settings from `.env`; see `.env.example`. SMTP is optional for the local demo, where the current OTP fallback prints codes to the server console.
-- Starting the app initializes the database schema. An empty database seeds accounts and prints their generated passwords once. An existing database retains its accounts; Task 2 did not reset passwords or seed new users.
+- The app reads optional settings from `.env`; see `.env.example`. SMTP is only used when optional faculty/admin OTP is enabled; without SMTP credentials, that mode prints codes to the server console.
+- Starting the app initializes the database schema. An empty database seeds the three demo accounts with password `pass`; an existing database keeps its accounts and passwords until deliberately changed.
 
 See [Task 2 environment notes](docs/TASK2_ENVIRONMENT.md) for exact setup, verification, and recovery details. The [Task 1 baseline](docs/TASK1_BASELINE.md) records the original behavior and preservation snapshot.
